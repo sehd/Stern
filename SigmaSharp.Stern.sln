@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{173DC35B-B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SigmaSharp.Stern.Web", "src\SigmaSharp.Stern.Web\SigmaSharp.Stern.Web.csproj", "{8AEE82B3-BA36-45CD-A385-ABB57147FB50}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SigmaSharp.Stern.ModuleFramework", "src\SigmaSharp.Stern.ModuleFramework\SigmaSharp.Stern.ModuleFramework.csproj", "{34BCC61A-C5B7-4783-BFAA-1F470191227E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,12 +27,17 @@ Global
 		{8AEE82B3-BA36-45CD-A385-ABB57147FB50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AEE82B3-BA36-45CD-A385-ABB57147FB50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AEE82B3-BA36-45CD-A385-ABB57147FB50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34BCC61A-C5B7-4783-BFAA-1F470191227E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34BCC61A-C5B7-4783-BFAA-1F470191227E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34BCC61A-C5B7-4783-BFAA-1F470191227E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34BCC61A-C5B7-4783-BFAA-1F470191227E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8AEE82B3-BA36-45CD-A385-ABB57147FB50} = {D34A3C3E-5DB3-4BA9-A165-80B27C12B5B3}
+		{34BCC61A-C5B7-4783-BFAA-1F470191227E} = {D34A3C3E-5DB3-4BA9-A165-80B27C12B5B3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ABBFEC45-130D-44A3-8A14-C184537D085F}
