@@ -3,9 +3,34 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{0EAFA74D-05DB-42CA-B9C2-11297CDE0D07}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE = LICENSE
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D34A3C3E-5DB3-4BA9-A165-80B27C12B5B3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{173DC35B-B4FD-4F1F-80D8-D993925AE999}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SigmaSharp.Stern.Web", "src\SigmaSharp.Stern.Web\SigmaSharp.Stern.Web.csproj", "{8AEE82B3-BA36-45CD-A385-ABB57147FB50}"
+EndProject
 Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8AEE82B3-BA36-45CD-A385-ABB57147FB50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AEE82B3-BA36-45CD-A385-ABB57147FB50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AEE82B3-BA36-45CD-A385-ABB57147FB50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AEE82B3-BA36-45CD-A385-ABB57147FB50}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8AEE82B3-BA36-45CD-A385-ABB57147FB50} = {D34A3C3E-5DB3-4BA9-A165-80B27C12B5B3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ABBFEC45-130D-44A3-8A14-C184537D085F}
