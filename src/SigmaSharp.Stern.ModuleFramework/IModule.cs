@@ -7,8 +7,6 @@ namespace SigmaSharp.Stern.ModuleFramework
         string Name { get; }
         string Title { get; }
         string Description { get; }
-        IEnumerable<ICommand> Commands { get; }
-        IEnumerable<IQuery> Queries { get; }
         IEnumerable<ISetting> Settings { get; }
     }
 }

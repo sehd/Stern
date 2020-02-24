@@ -15,4 +15,8 @@
     <ProjectReference Include="..\SigmaSharp.Stern.ModuleFramework\SigmaSharp.Stern.ModuleFramework.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Admin\" />
+  </ItemGroup>
+
 </Project>
