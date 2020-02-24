@@ -7,15 +7,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{0EAFA7
 	ProjectSection(SolutionItems) = preProject
 		LICENSE = LICENSE
 		README.md = README.md
+		Todo.txt = Todo.txt
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D34A3C3E-5DB3-4BA9-A165-80B27C12B5B3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{173DC35B-B4FD-4F1F-80D8-D993925AE999}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SigmaSharp.Stern.Web", "src\SigmaSharp.Stern.Web\SigmaSharp.Stern.Web.csproj", "{8AEE82B3-BA36-45CD-A385-ABB57147FB50}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SigmaSharp.Stern.Web", "src\SigmaSharp.Stern.Web\SigmaSharp.Stern.Web.csproj", "{8AEE82B3-BA36-45CD-A385-ABB57147FB50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SigmaSharp.Stern.ModuleFramework", "src\SigmaSharp.Stern.ModuleFramework\SigmaSharp.Stern.ModuleFramework.csproj", "{34BCC61A-C5B7-4783-BFAA-1F470191227E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SigmaSharp.Stern.ModuleFramework", "src\SigmaSharp.Stern.ModuleFramework\SigmaSharp.Stern.ModuleFramework.csproj", "{34BCC61A-C5B7-4783-BFAA-1F470191227E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BasicModules", "BasicModules", "{D3EEDBBB-5691-4963-98FF-E0E9514F091E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SigmaSharp.Stern.Module.PushNotification", "src\BasicModules\SigmaSharp.Stern.Module.PushNotification\SigmaSharp.Stern.Module.PushNotification.csproj", "{8A8361EB-3234-45E6-86EF-46955FE03E6D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SigmaSharp.Stern.Module.CronService", "src\BasicModules\SigmaSharp.Stern.Module.CronService\SigmaSharp.Stern.Module.CronService.csproj", "{CA7AFF77-2AF3-4EB0-9216-22BE0446DAD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SigmaSharp.Stern.Module.UserStorage", "src\BasicModules\SigmaSharp.Stern.Module.UserStorage\SigmaSharp.Stern.Module.UserStorage.csproj", "{04E60168-A386-41C4-A81F-BB38F520736C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +40,18 @@ Global
 		{34BCC61A-C5B7-4783-BFAA-1F470191227E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34BCC61A-C5B7-4783-BFAA-1F470191227E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34BCC61A-C5B7-4783-BFAA-1F470191227E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A8361EB-3234-45E6-86EF-46955FE03E6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A8361EB-3234-45E6-86EF-46955FE03E6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A8361EB-3234-45E6-86EF-46955FE03E6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A8361EB-3234-45E6-86EF-46955FE03E6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CA7AFF77-2AF3-4EB0-9216-22BE0446DAD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA7AFF77-2AF3-4EB0-9216-22BE0446DAD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA7AFF77-2AF3-4EB0-9216-22BE0446DAD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA7AFF77-2AF3-4EB0-9216-22BE0446DAD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04E60168-A386-41C4-A81F-BB38F520736C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04E60168-A386-41C4-A81F-BB38F520736C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04E60168-A386-41C4-A81F-BB38F520736C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04E60168-A386-41C4-A81F-BB38F520736C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,6 +59,10 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{8AEE82B3-BA36-45CD-A385-ABB57147FB50} = {D34A3C3E-5DB3-4BA9-A165-80B27C12B5B3}
 		{34BCC61A-C5B7-4783-BFAA-1F470191227E} = {D34A3C3E-5DB3-4BA9-A165-80B27C12B5B3}
+		{D3EEDBBB-5691-4963-98FF-E0E9514F091E} = {D34A3C3E-5DB3-4BA9-A165-80B27C12B5B3}
+		{8A8361EB-3234-45E6-86EF-46955FE03E6D} = {D3EEDBBB-5691-4963-98FF-E0E9514F091E}
+		{CA7AFF77-2AF3-4EB0-9216-22BE0446DAD1} = {D3EEDBBB-5691-4963-98FF-E0E9514F091E}
+		{04E60168-A386-41C4-A81F-BB38F520736C} = {D3EEDBBB-5691-4963-98FF-E0E9514F091E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {ABBFEC45-130D-44A3-8A14-C184537D085F}
