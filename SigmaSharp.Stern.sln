@@ -15,6 +15,11 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{173DC35B-B4FD-4F1F-80D8-D993925AE999}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SigmaSharp.Stern.Web", "src\SigmaSharp.Stern.Web\SigmaSharp.Stern.Web.csproj", "{8AEE82B3-BA36-45CD-A385-ABB57147FB50}"
+	ProjectSection(ProjectDependencies) = postProject
+		{04E60168-A386-41C4-A81F-BB38F520736C} = {04E60168-A386-41C4-A81F-BB38F520736C}
+		{CA7AFF77-2AF3-4EB0-9216-22BE0446DAD1} = {CA7AFF77-2AF3-4EB0-9216-22BE0446DAD1}
+		{8A8361EB-3234-45E6-86EF-46955FE03E6D} = {8A8361EB-3234-45E6-86EF-46955FE03E6D}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SigmaSharp.Stern.ModuleFramework", "src\SigmaSharp.Stern.ModuleFramework\SigmaSharp.Stern.ModuleFramework.csproj", "{34BCC61A-C5B7-4783-BFAA-1F470191227E}"
 EndProject

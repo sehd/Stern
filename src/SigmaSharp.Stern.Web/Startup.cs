@@ -10,18 +10,16 @@ namespace SigmaSharp.Stern.Web
 {
     public class Startup
     {
-        string colLog = "";
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddTransient<ISettingProvider, ModulesSettingProvider>();
 
             var moduleAssemblies = services.LoadModules();
-            var mvcBuilder = services.AddMvc();
+            var mvcBuilder = services.AddMvc(option => option.EnableEndpointRouting = false);
             foreach (var assembly in moduleAssemblies)
             {
                 mvcBuilder.AddApplicationPart(assembly);
             }
-            colLog = moduleAssemblies.Count().ToString();
             mvcBuilder.AddControllersAsServices();
         }
 
@@ -32,15 +30,7 @@ namespace SigmaSharp.Stern.Web
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseRouting();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World! " + colLog);
-                });
-            });
+            app.UseMvc();
         }
     }
 }

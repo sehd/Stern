@@ -1,2 +1,4 @@
 Log
 	Module manager should log
+
+User management
