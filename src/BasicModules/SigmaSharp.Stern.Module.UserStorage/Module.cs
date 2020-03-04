@@ -5,7 +5,7 @@ namespace SigmaSharp.Stern.Module.UserStorage
 {
     public class Module : IModule
     {
-        public string Name => "UserStorage";
+        public string Name => "user-storage";
 
         public string Title => "User Storage";
 
@@ -14,6 +14,6 @@ namespace SigmaSharp.Stern.Module.UserStorage
 
         public IEnumerable<ISetting> Settings { get; }
 
-        
+        public ModuleServices ModuleServices => ModuleServices.ApiController;
     }
 }

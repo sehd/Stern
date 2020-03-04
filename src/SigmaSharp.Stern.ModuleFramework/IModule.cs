@@ -8,5 +8,6 @@ namespace SigmaSharp.Stern.ModuleFramework
         string Title { get; }
         string Description { get; }
         IEnumerable<ISetting> Settings { get; }
+        ModuleServices ModuleServices { get; }
     }
 }

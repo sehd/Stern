@@ -20,14 +20,11 @@ namespace SigmaSharp.Stern.Web
             foreach (string dll in Directory.GetFiles(path, "*.dll"))
             {
                 var assembly = Assembly.LoadFile(dll);
-                var modulesInAssembly = assembly.GetExportedTypes()
-                    .Where(x => typeof(IModule).IsAssignableFrom(x) && !x.IsInterface && !x.IsAbstract);
-                if (modulesInAssembly.Any())
+                var moduleInAssembly = assembly.GetExportedTypes()
+                    .Where(x => typeof(IModule).IsAssignableFrom(x) && !x.IsInterface && !x.IsAbstract)
+                    .FirstOrDefault();
+                if (moduleInAssembly != default)
                 {
-                    foreach (var module in modulesInAssembly)
-                    {
-                        services.AddSingleton(module);
-                    }
                     allAssemblies.Add(assembly);
                 }
             }

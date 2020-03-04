@@ -5,7 +5,7 @@ namespace SigmaSharp.Stern.Module.CronService
 {
     public class Module : IModule
     {
-        public string Name => "CronService";
+        public string Name => "cron-service";
 
         public string Title => "Cron Service";
 
@@ -13,5 +13,7 @@ namespace SigmaSharp.Stern.Module.CronService
             "predefined times or set intervals.";
 
         public IEnumerable<ISetting> Settings => throw new System.NotImplementedException();
+
+        public ModuleServices ModuleServices => ModuleServices.None;
     }
 }

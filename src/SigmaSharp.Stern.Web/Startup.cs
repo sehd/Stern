@@ -20,11 +20,6 @@ namespace SigmaSharp.Stern.Web
                 mvcBuilder.AddApplicationPart(assembly);
             }
             mvcBuilder.AddControllersAsServices();
-
-            //services.AddSpaStaticFiles(configuration =>
-            //{
-            //    configuration.RootPath = "Admin/dist";
-            //});
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -34,13 +29,16 @@ namespace SigmaSharp.Stern.Web
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseSpa(configuration =>
+            app.Map("/admin", admin =>
             {
-                configuration.Options.SourcePath = "Admin";
-                //if (env.IsDevelopment())
-                //{
-                //    configuration.UseAngularCliServer("serve");
-                //}
+                admin.UseSpa(spa =>
+                {
+                    spa.Options.SourcePath = "Admin";
+                    if (env.IsDevelopment())
+                    {
+                        spa.UseAngularCliServer("start");
+                    }
+                });
             });
 
             app.UseMvc();
