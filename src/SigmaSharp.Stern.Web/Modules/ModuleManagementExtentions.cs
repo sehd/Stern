@@ -11,8 +11,7 @@ namespace SigmaSharp.Stern.Web.Modules
 {
     static class ModuleManagementExtentions
     {
-        public static IEnumerable<Assembly> LoadModules(
-            this IServiceCollection services)
+        public static IEnumerable<Assembly> LoadModules(this IServiceCollection services)
         {
             var allAssemblies = new List<Assembly>();
             var allModules = new ModuleCollection();
@@ -22,16 +21,20 @@ namespace SigmaSharp.Stern.Web.Modules
 
             foreach (string dll in Directory.GetFiles(path, "*.dll"))
             {
-                var (assembly, module) = LoadModule(dll);
-                allModules.Add(module);
-                allAssemblies.Add(assembly);
+                var assemblymodule = LoadModule(dll);
+                if (assemblymodule.HasValue)
+                {
+                    var (assembly, module) = assemblymodule.Value;
+                    allModules.Add(module);
+                    allAssemblies.Add(assembly);
+                }
             }
 
             services.AddSingleton<IModuleCollection>(allModules);
             return allAssemblies;
         }
 
-        public static (Assembly, IModule) LoadModule(string dllPath)
+        public static (Assembly, IModule)? LoadModule(string dllPath)
         {
             var assembly = Assembly.LoadFile(dllPath);
             var moduleInAssembly = assembly.GetExportedTypes()
@@ -45,8 +48,7 @@ namespace SigmaSharp.Stern.Web.Modules
                         throw new InvalidOperationException($"Error in module {module.Name}. Routing doesn't match the required pattern");
                 return (assembly, module);
             }
-            else
-                throw new InvalidOperationException("There is no module in the specified assembly.");
+            return null;
         }
 
         private static bool CheckRoutings(IModule module, Assembly assembly)
