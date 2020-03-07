@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace SigmaSharp.Stern.Module.UserStorage
 {
-    [Route("/")]
+    [Route("user-storage")]
     public class UserStorageController : Controller
     {
         [HttpGet]
