@@ -2,3 +2,9 @@ Log
 	Module manager should log
 
 User management
+
+API hit counter
+
+Modules to come:
+	Message to owner
+	Error integration
