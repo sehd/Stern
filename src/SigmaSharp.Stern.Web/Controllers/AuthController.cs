@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using SigmaSharp.Stern.Web.Models.Authentication;
 using System;
@@ -17,10 +18,14 @@ namespace SigmaSharp.Stern.Web.Controllers
     public class AuthController : ControllerBase
     {
         private readonly UserManager<ApplicationUser> userManager;
+        private readonly IOptions<AuthenticationOptions> authOptions;
 
-        public AuthController(UserManager<ApplicationUser> userManager)
+        public AuthController(
+            UserManager<ApplicationUser> userManager,
+            IOptions<AuthenticationOptions> authOptions)
         {
             this.userManager = userManager;
+            this.authOptions = authOptions;
         }
 
         [AllowAnonymous]
@@ -37,12 +42,12 @@ namespace SigmaSharp.Stern.Web.Controllers
                     new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
                 };
 
-                //TODO: Get from settings
-                var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("SecureKey"));
+                var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
+                    authOptions.Value.SecurityKey));
 
                 var token = new JwtSecurityToken(
-                    issuer: "http://dotnetdetail.net", //TODO
-                    audience: "http://dotnetdetail.net", //TODO
+                    issuer: authOptions.Value.Issuer,
+                    audience: authOptions.Value.Audience,
                     expires: DateTime.Now.AddHours(3),
                     claims: authClaims,
                     signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)

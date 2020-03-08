@@ -11,7 +11,7 @@ namespace SigmaSharp.Stern.Web.Modules
 {
     static class ModuleManagementExtentions
     {
-        public static IEnumerable<Assembly> LoadModules(this IServiceCollection services)
+        public static IEnumerable<Assembly> AddModules(this IServiceCollection services)
         {
             var allAssemblies = new List<Assembly>();
             var allModules = new ModuleCollection();
