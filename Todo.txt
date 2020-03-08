@@ -1,3 +1,12 @@
+Priority 1:
+	LOGIN IN ADMIN (https://jasonwatmore.com/post/2019/06/22/angular-8-jwtauthentication-xample-torial#app-uting-   ts)
+	MIDDLEWARE FOR STATISTICS
+	DASHBOARD CONTROLLER
+	USER CONTROLLER
+	ADMIN CONTROLLER
+	ADMIN PAGES
+	IF NOT REQUESTED WEB CHECK MODULE NOT TO HAVE CONTROLLERS
+
 Log
 	Module manager should log
 
@@ -8,12 +17,3 @@ API hit counter
 Modules to come:
 	Message to owner
 	Error integration
-
-
-								MIDDLEWARE FOR STATISTICS
-								DASHBOARD CONTROLLER
-								USER CONTROLLER
-								ADMIN CONTROLLER
-								LOGIN IN ADMIN
-								ADMIN PAGES
-								IF NOT REQUESTED WEB CHECK MODULE NOT TO HAVE CONTROLLERS
