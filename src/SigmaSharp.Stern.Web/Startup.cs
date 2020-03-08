@@ -22,7 +22,7 @@ namespace SigmaSharp.Stern.Web
             services.AddDbContext<CoreDbContext>(options =>
             {
                 //TODO Temp
-                options.UseSqlite("SQLite.db3");
+                options.UseSqlite("Data Source=./DebugDb/SQLite.db3");
             });
             ConfigureAuthentication(services);
 
@@ -91,7 +91,7 @@ namespace SigmaSharp.Stern.Web
                 });
             });
 
-            _ = new DataSeeder().InitializeDatabaseAsync(app.ApplicationServices);
+            app.InitializeDatabaseAsync().Wait();
 
             app.UseAuthentication();
             app.UseAuthorization();

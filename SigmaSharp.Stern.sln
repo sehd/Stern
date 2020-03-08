@@ -5,6 +5,9 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{0EAFA74D-05DB-42CA-B9C2-11297CDE0D07}"
 	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
 		LICENSE = LICENSE
 		README.md = README.md
 		Todo.txt = Todo.txt
@@ -25,11 +28,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SigmaSharp.Stern.ModuleFram
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BasicModules", "BasicModules", "{D3EEDBBB-5691-4963-98FF-E0E9514F091E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SigmaSharp.Stern.Module.PushNotification", "src\BasicModules\SigmaSharp.Stern.Module.PushNotification\SigmaSharp.Stern.Module.PushNotification.csproj", "{8A8361EB-3234-45E6-86EF-46955FE03E6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SigmaSharp.Stern.Module.PushNotification", "src\BasicModules\SigmaSharp.Stern.Module.PushNotification\SigmaSharp.Stern.Module.PushNotification.csproj", "{8A8361EB-3234-45E6-86EF-46955FE03E6D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SigmaSharp.Stern.Module.CronService", "src\BasicModules\SigmaSharp.Stern.Module.CronService\SigmaSharp.Stern.Module.CronService.csproj", "{CA7AFF77-2AF3-4EB0-9216-22BE0446DAD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SigmaSharp.Stern.Module.CronService", "src\BasicModules\SigmaSharp.Stern.Module.CronService\SigmaSharp.Stern.Module.CronService.csproj", "{CA7AFF77-2AF3-4EB0-9216-22BE0446DAD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SigmaSharp.Stern.Module.UserStorage", "src\BasicModules\SigmaSharp.Stern.Module.UserStorage\SigmaSharp.Stern.Module.UserStorage.csproj", "{04E60168-A386-41C4-A81F-BB38F520736C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SigmaSharp.Stern.Module.UserStorage", "src\BasicModules\SigmaSharp.Stern.Module.UserStorage\SigmaSharp.Stern.Module.UserStorage.csproj", "{04E60168-A386-41C4-A81F-BB38F520736C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

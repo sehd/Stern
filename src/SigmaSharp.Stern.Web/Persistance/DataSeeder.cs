@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -10,17 +11,19 @@ using System.Threading.Tasks;
 
 namespace SigmaSharp.Stern.Web.Persistance
 {
-    class DataSeeder
+    static class DataSeeder
     {
-        public async Task InitializeDatabaseAsync(IServiceProvider serviceProvider)
+        public static async Task InitializeDatabaseAsync(this IApplicationBuilder app)
         {
+            var serviceProvider = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>()
+                .CreateScope().ServiceProvider;
             var context = serviceProvider.GetService<CoreDbContext>();
-            var logger = serviceProvider.GetService<ILogger>();
-            context.Database.Migrate();
+            var logger = serviceProvider.GetService<ILogger<CoreDbContext>>();
+            await context.Database.MigrateAsync();
             await InitializeUsers(serviceProvider, context, logger);
         }
 
-        private async Task InitializeUsers(IServiceProvider serviceProvider, CoreDbContext context, ILogger logger)
+        private static async Task InitializeUsers(IServiceProvider serviceProvider, CoreDbContext context, ILogger logger)
         {
             string[] roles = new string[] { "SuperAdmin", "Admin", "User" };
 
@@ -30,7 +33,11 @@ namespace SigmaSharp.Stern.Web.Persistance
 
                 if (!context.Roles.Any(r => r.Name == role))
                 {
-                    await roleStore.CreateAsync(new IdentityRole(role));
+                    await roleStore.CreateAsync(new IdentityRole()
+                    {
+                        Name = role,
+                        NormalizedName = role.ToUpper()
+                    });
                 }
             }
 
@@ -65,7 +72,7 @@ namespace SigmaSharp.Stern.Web.Persistance
             await context.SaveChangesAsync();
         }
 
-        private async Task<IdentityResult> AssignRoles(IServiceProvider services, string email, string[] roles)
+        private static async Task<IdentityResult> AssignRoles(IServiceProvider services, string email, string[] roles)
         {
             UserManager<ApplicationUser> _userManager = services.GetService<UserManager<ApplicationUser>>();
             ApplicationUser user = await _userManager.FindByEmailAsync(email);
