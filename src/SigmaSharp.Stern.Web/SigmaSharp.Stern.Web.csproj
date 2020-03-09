@@ -38,4 +38,8 @@
     <ProjectReference Include="..\SigmaSharp.Stern.ModuleFramework\SigmaSharp.Stern.ModuleFramework.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Admin\projects\adminapp\src\assets\plugins\zwicon\" />
+  </ItemGroup>
+
 </Project>

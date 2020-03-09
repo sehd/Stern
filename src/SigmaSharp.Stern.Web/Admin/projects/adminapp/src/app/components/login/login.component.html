@@ -1,4 +1,4 @@
-<div class="col-md-6 offset-md-3 mt-5">
+<!--<div class="col-md-6 offset-md-3 mt-5">
   <div class="alert alert-info">
     Username: test<br />
     Password: test
@@ -25,8 +25,55 @@
           <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
           Login
         </button>
-        <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+        <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{error}</div>
       </form>
+    </div>
+  </div>
+</div>-->
+
+<div class="login">
+
+  <!-- Login -->
+  <div class="login__block active" id="login-main">
+    <div class="login__header">
+      <i class="zwicon-user-circle"></i>
+      Hi there! Please Sign in
+    </div>
+
+    <div class="login__body">
+      <div class="login__inputs">
+        <div class="form-group">
+          <input type="text" class="form-control text-center" placeholder="Email Address">
+        </div>
+
+        <div class="form-group">
+          <input type="password" class="form-control text-center" placeholder="Password">
+        </div>
+      </div>
+
+      <a href="" class="login__btn">Login</a>
+      <div class="login__helper"><a data-login-switch="#login-forgot" href="">Forgot password?</a></div>
+    </div>
+  </div>
+
+  <!-- Forgot Password -->
+  <div class="login__block" id="login-forgot">
+    <div class="login__header">
+      <i class="zwicon-user-circle"></i>
+      Forgot Password?
+    </div>
+
+    <div class="login__body">
+      <p class="mb-4">Lorem ipsum dolor fringilla enim feugiat commodo sed ac lacus.</p>
+
+      <div class="login__inputs">
+        <div class="form-group">
+          <input type="text" class="form-control text-center" placeholder="Email Address">
+        </div>
+      </div>
+
+      <a href="index.html" class="login__btn">Reset password</a>
+      <div class="login__helper"><a data-login-switch="#login-main" href="">Back to login</a></div>
     </div>
   </div>
 </div>

@@ -1,4 +1,5 @@
 Priority 1:
+	style: https://byrushan.com/projects/maed/app/2.0/index.html
 	Send name and other user info in login
 	MIDDLEWARE FOR STATISTICS
 	DASHBOARD CONTROLLER
