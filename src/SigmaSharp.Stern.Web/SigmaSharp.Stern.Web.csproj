@@ -8,6 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Admin\projects\adminapp\src\app\models\user.ts" />
+    <None Remove="Admin\projects\adminapp\src\app\services\auth\authentication.service.ts" />
     <None Remove="SQLite.db3" />
   </ItemGroup>
 

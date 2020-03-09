@@ -1,5 +1,6 @@
 Priority 1:
-	LOGIN IN ADMIN (https://jasonwatmore.com/post/2019/06/22/angular-8-jwtauthentication-xample-torial#app-uting-   ts)
+	LOGIN IN ADMIN (https://jasonwatmore.com/post/2019/06/22/angular-8-jwt-authentication-example-tutorial)
+	READ API URL IN ADMIN FROM THE BASE CODE
 	MIDDLEWARE FOR STATISTICS
 	DASHBOARD CONTROLLER
 	USER CONTROLLER
