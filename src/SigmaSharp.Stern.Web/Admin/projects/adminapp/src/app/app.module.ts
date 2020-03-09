@@ -4,9 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule, RouteComponents } from './app-routing.module';
 import { AppComponent } from './components/app.component';
 import { APP_BASE_HREF } from '@angular/common';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './services/auth/jwt.interceptor';
 import { ErrorInterceptor } from './services/auth/error.interceptor';
+
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { ErrorInterceptor } from './services/auth/error.interceptor';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: APP_BASE_HREF, useValue: '/admin' },
