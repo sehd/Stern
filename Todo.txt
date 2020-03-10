@@ -7,6 +7,7 @@ Priority 1:
 	ADMIN CONTROLLER
 	ADMIN PAGES
 	IF NOT REQUESTED WEB CHECK MODULE NOT TO HAVE CONTROLLERS
+	Forget pass
 
 Log
 	Module manager should log

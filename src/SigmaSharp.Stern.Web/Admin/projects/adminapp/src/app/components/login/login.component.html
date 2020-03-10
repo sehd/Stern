@@ -1,36 +1,3 @@
-<!--<div class="col-md-6 offset-md-3 mt-5">
-  <div class="alert alert-info">
-    Username: test<br />
-    Password: test
-  </div>
-  <div class="card">
-    <h4 class="card-header">Angular 8 JWT Login Example</h4>
-    <div class="card-body">
-      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-          <label for="username">Username</label>
-          <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
-          <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-            <div *ngIf="f.username.errors.required">Username is required</div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
-          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-            <div *ngIf="f.password.errors.required">Password is required</div>
-          </div>
-        </div>
-        <button [disabled]="loading" class="btn btn-primary">
-          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-          Login
-        </button>
-        <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{error}</div>
-      </form>
-    </div>
-  </div>
-</div>-->
-
 <div class="login">
 
   <!-- Login -->
@@ -43,21 +10,33 @@
     <div class="login__body">
       <div class="login__inputs">
         <div class="form-group">
-          <input type="text" class="form-control text-center" placeholder="Email Address">
+          <input type="text" class="form-control text-center" placeholder="Username"
+                 [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+          <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Username is required</div>
+          </div>
         </div>
 
         <div class="form-group">
-          <input type="password" class="form-control text-center" placeholder="Password">
+          <input type="password" class="form-control text-center" placeholder="Password"
+                 [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+          </div>
         </div>
       </div>
 
-      <a href="" class="login__btn">Login</a>
-      <div class="login__helper"><a data-login-switch="#login-forgot" href="">Forgot password?</a></div>
+      <a href="#" class="login__btn" [disabled]="loading" (click)="onSubmit()">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+        Login
+      </a>
+      <!--<div class="login__helper"><a data-login-switch="#login-forgot" href="">Forgot password?</a></div>-->
+      <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{error}</div>
     </div>
   </div>
 
   <!-- Forgot Password -->
-  <div class="login__block" id="login-forgot">
+  <!--<div class="login__block" id="login-forgot">
     <div class="login__header">
       <i class="zwicon-user-circle"></i>
       Forgot Password?
@@ -75,5 +54,5 @@
       <a href="index.html" class="login__btn">Reset password</a>
       <div class="login__helper"><a data-login-switch="#login-main" href="">Back to login</a></div>
     </div>
-  </div>
+  </div>-->
 </div>
