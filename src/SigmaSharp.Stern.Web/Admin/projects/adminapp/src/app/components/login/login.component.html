@@ -11,27 +11,26 @@
       <div class="login__inputs">
         <div class="form-group">
           <input type="text" class="form-control text-center" placeholder="Username"
-                 [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
-          <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-            <div *ngIf="f.username.errors.required">Username is required</div>
-          </div>
+                 [ngClass]="{ 'is-invalid': submitted && !username }"
+                 [(ngModel)]="username">
         </div>
 
         <div class="form-group">
           <input type="password" class="form-control text-center" placeholder="Password"
-                 [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
-          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-            <div *ngIf="f.password.errors.required">Password is required</div>
+                 [ngClass]="{ 'is-invalid': submitted && !password }"
+                 [(ngModel)]="password">
+          <div *ngIf="submitted && (!username || !password)" class="invalid-feedback">
+            <div>Please enter username and password</div>
           </div>
         </div>
       </div>
 
-      <a href="#" class="login__btn" [disabled]="loading" (click)="onSubmit()">
+      <button class="btn login__btn" [disabled]="loading" (click)="onSubmit()">
         <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
         Login
-      </a>
+      </button>
       <!--<div class="login__helper"><a data-login-switch="#login-forgot" href="">Forgot password?</a></div>-->
-      <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{error}</div>
+      <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
     </div>
   </div>
 
