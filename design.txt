@@ -1,0 +1,28 @@
+There will be a pipe and filter architecture here
+    Http request -> Allowed version check -> Auth -> Statistic -> Service locator -> Service -> Http response
+                       |                       |
+                       |                       --> Return unauthorized
+                       --> Return force update  
+
+There will be data channels for:
+    Logging
+    2 for each service (Receives and responds a message struct)
+
+There will be a registrar of services.
+    Each service has name
+    Should have a start method that takes it's name and then opens a channel with it's name to receive messages
+    Can have multiple instances with different names
+    A GRPC/Http/etc service will allow service extensions
+
+Services can:
+    Know if other service (with name) exists
+    Message other service (Through channels)
+    Receive api calls (this is the main functionality)
+
+Application startup:
+    Start logging
+    Inits basic services
+    Get list of additional services from config and init -> service locator
+    Start http server -> pipeline
+
+Each http call should include version header and optional statistics tags
