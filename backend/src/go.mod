@@ -1,4 +1,4 @@
-module stern
+module github.com/sehd/Stern
 
 go 1.14
 
